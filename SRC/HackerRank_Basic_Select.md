@@ -105,38 +105,59 @@ Where Lower(Substr(City,1,1)) in ('a','e','i','o','u');
 
 # Weather Observation Station 7
 ---
-```sql
+Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION. Your result cannot contain duplicates.
 
+```sql
+Select Distinct City from Station
+Where lower(substr(City,-1,1)) in ('a','e','i','o','u');
 ```
 
 # Weather Observation Station 8
 ---
-```sql
+Query the list of CITY names from STATION which have vowels (i.e., a, e, i, o, and u) as both their first and last characters. Your result cannot contain duplicates.
 
+```sql
+Select Distinct City from Station
+Where lower(substr(City,1,1)) in ('a','e','i','o','u')
+And lower(substr(City,-1,1)) in ('a','e','i','o','u');
 ```
 
 # Weather Observation Station 9
 ---
-```sql
+Query the list of CITY names from STATION that do not start with vowels. Your result cannot contain duplicates.
 
+```sql
+Select Distinct City from Station
+Where lower(substr(City,1,1)) not in ('a','e','i','o','u');
 ```
 
 # Werather Observation Station 10
 ---
-```sql
+Query the list of CITY names from STATION that do not end with vowels. Your result cannot contain duplicates.
 
+```sql
+Select Distinct City from Station
+Where lower(substr(City,-1,1)) not in ('a','e','i','o','u');
 ```
 
 # Weather Observation Station 11
 ---
-```sql
+Query the list of CITY names from STATION that either do not start with vowels or do not end with vowels. Your result cannot contain duplicates.
 
+```sql
+Select Distinct City from Station
+Where lower(substr(City,1,1)) not in ('a','e','i','o','u')
+Or lower(substr(City,-1,1)) not in ('a','e','i','o','u');
 ```
 
 # Weather Observation Station 12
 ---
-```sql
+Query the list of CITY names from STATION that do not start with vowels and do not end with vowels. Your result cannot contain duplicates.
 
+```sql
+Select Distinct City from Station
+Where lower(substr(City,1,1)) not in ('a','e','i','o','u')
+And lower(substr(City,-1,1)) not in ('a','e','i','o','u');
 ```
 
 # 
