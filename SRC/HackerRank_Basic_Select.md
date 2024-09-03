@@ -160,26 +160,39 @@ Where lower(substr(City,1,1)) not in ('a','e','i','o','u')
 And lower(substr(City,-1,1)) not in ('a','e','i','o','u');
 ```
 
-# 
+# Higher Than 75 Marks
 ---
-```sql
+Query the Name of any student in STUDENTS who scored higher than 75 Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
 
+The STUDENTS table is described as follows:
+
+![TABLE][https://s3.amazonaws.com/hr-challenge-images/12896/1443815243-94b941f556-1.png]
+
+```sql
+Select Name from Students
+Where Marks > 75
+Order by substr(Name,-3,3) Asc, Id;
 ```
 
-# 
+# Employee Names
 ---
-```sql
+Write a query that prints a list of employee names (i.e.: the name attribute) from the Employee table in alphabetical order.
 
+The Employee table containing employee data for a company is described as follows:
+
+![TABLE][https://s3.amazonaws.com/hr-challenge-images/19629/1458557872-4396838885-ScreenShot2016-03-21at4.27.13PM.png]
+
+```sql
+Select Name from employee
+Order By Name ASC;
 ```
 
-# 
+# Employee Salaries
 ---
+Write a query that prints a list of employee names (i.e.: the name attribute) for employees in Employee having a salary greater than  per month who have been employees for less than  months. Sort your result by ascending employee_id.
+
 ```sql
-
-```
-
-# 
----
-```sql
-
+Select Name from Employee
+where Salary > 2000 
+And Months < 10;
 ```
