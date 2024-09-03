@@ -166,7 +166,7 @@ Query the Name of any student in STUDENTS who scored higher than 75 Marks. Order
 
 The STUDENTS table is described as follows:
 
-![TABLE][https://s3.amazonaws.com/hr-challenge-images/12896/1443815243-94b941f556-1.png]
+![TABLE](https://s3.amazonaws.com/hr-challenge-images/12896/1443815243-94b941f556-1.png)
 
 ```sql
 Select Name from Students
@@ -180,7 +180,7 @@ Write a query that prints a list of employee names (i.e.: the name attribute) fr
 
 The Employee table containing employee data for a company is described as follows:
 
-![TABLE][https://s3.amazonaws.com/hr-challenge-images/19629/1458557872-4396838885-ScreenShot2016-03-21at4.27.13PM.png]
+![TABLE](https://s3.amazonaws.com/hr-challenge-images/19629/1458557872-4396838885-ScreenShot2016-03-21at4.27.13PM.png)
 
 ```sql
 Select Name from employee
