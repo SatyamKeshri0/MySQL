@@ -4,7 +4,7 @@ Write a query identifying the type of each record in the TRIANGLES table using i
 Equilateral: It's a triangle with  sides of equal length.
 Isosceles: It's a triangle with  sides of equal length.
 Scalene: It's a triangle with  sides of differing lengths.
-Not A Triangle: The given values of A, B, and C don't form a triangle.
+Not A Triangle: The given values of A, B, and C don't form a triangle. 
 
 The TRIANGLES table is described as follows:
 
