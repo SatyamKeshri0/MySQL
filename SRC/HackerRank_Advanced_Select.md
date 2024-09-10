@@ -69,6 +69,26 @@ Occupation will only contain one of the following values: Doctor, Professor, Sin
 
 ```sql
 
+Set @Row_Num = 0;
+Set @Current_Occup = '';
+
+Select 
+Max(Case When Occupation = 'Doctor' Then Name End) As Doctor,
+Max(Case When Occupation = 'Professor' Then Name End) As Professor,
+Max(Case When Occupation = 'Singer' Then Name End) As Singer,
+Max(Case When Occupation = 'Actor' Then Name End) As Actor
+From
+(
+Select Name, Occupation,
+@Row_Num := If(@Current_Occup = Occupation, @Row_Num + 1, 1)
+As Row_Num,
+@Current_Occup := Occupation
+From Occupations
+Order By Occupation, Name
+) 
+As RN
+Group By Row_Num
+Order By Row_Num;
 ```
 
 # Binary Tree Nodes
