@@ -150,7 +150,12 @@ Employee: The employee_code is the code of the employee, the manager_code is the
 ![Table](https://s3.amazonaws.com/hr-challenge-images/19505/1458535002-d47f63cbb4-ScreenShot2016-03-21at8.50.41AM.png)
 
 ```sql
-
+Select c.Company_Code, c.Founder,
+Count(Distinct e.Lead_Manager_Code), Count(Distinct e.Senior_Manager_Code),
+Count(Distinct e.Manager_Code), Count(Distinct e.Employee_Code) 
+From Company c Join Employee e On c.Company_Code = e.Company_Code 
+Group By c.Company_code, c.Founder
+Order By c.Company_code;
 ```
 
 # 
