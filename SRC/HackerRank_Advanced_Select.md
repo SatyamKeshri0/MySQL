@@ -157,9 +157,3 @@ From Company c Join Employee e On c.Company_Code = e.Company_Code
 Group By c.Company_code, c.Founder
 Order By c.Company_code;
 ```
-
-# 
----
-```sql
-
-```
