@@ -154,13 +154,13 @@ Where Lat_N = (Select Lat_N From Station
 
 # Weather Observation Station 18
 ---
-Consider P~1(a,b) and P~2(c,d) to be two points on a 2D plane.
+Consider P~1~(a,b) and P~2~(c,d) to be two points on a 2D plane.
 
  - a happens to equal the minimum value in Northern Latitude (LAT_N in STATION).
  - b happens to equal the minimum value in Western Longitude (LONG_W in STATION).
  - c happens to equal the maximum value in Northern Latitude (LAT_N in STATION).
  - d happens to equal the maximum value in Western Longitude (LONG_W in STATION).
-Query the Manhattan Distance between points P~1 and P~2 and round it to a scale of  decimal places.
+Query the Manhattan Distance between points P~1~ and P~2~ and round it to a scale of  decimal places.
 
 ```sql
 
