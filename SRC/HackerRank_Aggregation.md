@@ -163,16 +163,45 @@ Consider P<Sub.1</Sub>(a,b) and P<Sub>2</Sub>(c,d) to be two points on a 2D plan
 Query the Manhattan Distance between points P<Sub>1</Sub> and P<Sub>2</Sub> and round it to a scale of  decimal places.
 
 ```sql
+Select Round(Abs(a - c) + Abs(b - d), 4)
+From (
+Select Min(Lat_N) As a,
+Min(Long_W) As b,
+Max(lat_N) As c,
+Max(Long_W) As d
+From Station) As Manhattan;
 
 ```
 # Weather Observation Station 19
 ---
-```sql
+Consider P<Sub.1</Sub>(a,b) and P<Sub>2</Sub>(c,d) to be two points on a 2D plane where (a,b) are the respective minimum and maximum values of Northern Latitude (LAT_N) and (c,d) are the respective minimum and maximum values of Western Longitude (LONG_W) in STATION.
 
+Query the Euclidean Distance between points P<Sub>1</Sub> and P<Sub>2</Sub> and format your answer to display 4 decimal digits.
+```sql
+Select Round(Sqrt(Power(a-c,2) + Power(b-d,2)),4)
+From (
+Select Min(Lat_N) As a, 
+    Min(Long_W) As b, 
+    Max(Lat_N) As c, 
+    Max(Long_W) As d
+    From Station) As Euclidean;
 ```
 # Weather Observation Station 20
 ---
+A median is defined as a number separating the higher half of a data set from the lower half. Query the median of the Northern Latitudes (LAT_N) from STATION and round your answer to 4 decimal places.
+
 ```sql
+Select
+    Round(Avg(Lat_N), 4) As Median
+From
+(
+    Select Lat_N, Row_Number() Over (Order By Lat_N) As rn
+    From Station
+) As subq
+Where
+    rn = (Select Ceil((Count(rn)+1)/2) From Station)
+    Or
+    rn = (Select Floor((Count(rn)+1)/2) From Station)
 
 ```
 # 
