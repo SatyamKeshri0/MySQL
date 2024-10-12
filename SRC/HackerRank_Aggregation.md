@@ -204,8 +204,3 @@ Where
     rn = (Select Floor((Count(rn)+1)/2) From Station)
 
 ```
-# 
----
-```sql
-
-```
